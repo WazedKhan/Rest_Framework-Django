@@ -13,3 +13,4 @@ class ProductSerializer(serializers.ModelSerializer):
 
     def get_discount(self, obj):
         return obj.get_discount()
+        # this method can return info about user and related models data 
