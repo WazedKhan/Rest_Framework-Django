@@ -6,3 +6,7 @@ class Product(models.Model):
     content = models.TextField(blank=True, null= True)
     price = models.FloatField()
 
+    @property
+    def sale_price(self):
+        return "%.2f" %(float(self.price)*0.8)
+ 
