@@ -11,8 +11,7 @@ def api_home(request, *args, **kwargs):
     Post view with DRF Serializer Validation.
     """
     serializer = ProductSerializer(data=request.data)
-    if serializer.is_valid():
-        data = serializer.data
-        print(data)
-        return Response(data)
-    return Response(serializer.errors , status=status.HTTP_418_IM_A_TEAPOT)
+    if serializer.is_valid(raise_exception=True):
+        # instance = serializer.save()
+        return Response(serializer.data)
+    return Response(serializer.errors , status=status.HTTP_418_IM_A_TEAPOT) 
