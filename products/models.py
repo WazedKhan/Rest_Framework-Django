@@ -1,4 +1,3 @@
-from tokenize import Triple
 from django.db import models
 
 class Product(models.Model):
